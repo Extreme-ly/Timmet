@@ -13,6 +13,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 import anime from 'animejs'
 import { useEffect, useRef } from 'react'
+import AppbarLanding from '../components/AppbarLanding'
 
 function TitleDivider() {
   return (
@@ -32,8 +33,8 @@ const Home: NextPage = () => {
     })
   }, [])
   const actions = [
-    { icon: <AppleIcon />, name: 'Apple Store' },
-    { icon: <AndroidIcon />, name: 'Play Store' },
+    { icon: <AppleIcon color='disabled' />, name: 'Apple Store' },
+    { icon: <AndroidIcon color='disabled' />, name: 'Play Store' },
     { icon: <TwitterIcon />, name: 'Our Twitter' },
     { icon: <InstagramIcon />, name: 'Our Insta Page' },
   ];
@@ -45,19 +46,21 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <AppbarLanding />
+
       <Box sx={{ height: "400px", display: 'grid', placeItems: 'center' }}>
         <Typography component='div' variant='h2' sx={{ letterSpacing: '1em' }} className="title">
           Timmet.
           <TitleDivider />
           <Typography variant='body1' sx={{ mt: 3, ml: 15 }}>
-            Lorem Ipsum ya di ya da
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </Typography>
         </Typography>
         <IconButton size='large' sx={{ position: 'absolute', right: 0 }}>
-        <ArrowForwardIcon fontSize="inherit" />
-      </IconButton>
+          <ArrowForwardIcon fontSize="inherit" />
+        </IconButton>
       </Box>  
-
+  
       <SpeedDial
         ariaLabel="SpeedDial"
         sx={{ position: 'absolute', bottom: 16, right: 16 }}
